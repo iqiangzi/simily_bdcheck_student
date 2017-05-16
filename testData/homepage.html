@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="CSS/login-1.3.3.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="Images/wflogo.ico" />
+    <link rel="apple-touch-icon" href="Images/wflogo.ico" />
+    <link rel="stylesheet" href="http://old.test.wanfangdata.com.cn/Share/Css/Share-1.0.0.css" type="text/css" />
+    <script language="javascript" type="text/javascript" src="http://old.test.wanfangdata.com.cn/Share/Script/jquery-1.7.1.min.js"></script>
+    
+    <title>登录</title>
+    <link href="CSS/jquery.ui.core.css" type="text/css" rel="stylesheet" />
+    <link href="CSS/jquery.dialog_theme_1.css" type="text/css" rel="stylesheet" />
+    <link href="CSS/jquery.ui.dialog.css" type="text/css" rel="stylesheet" />
+    <link href="CSS/jquery.ui.theme.css" type="text/css" rel="stylesheet" />
+    <link href="CSS/LoginTip_0.1.css" type="text/css" rel="stylesheet" />
+    <link href="CSS/login-1.3.3.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="Script/jquery.watermark-3.1.3.min.js"></script>
+    <meta property="qc:admins" content="13113223604671661674141637563677154060454" />
+
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="Login.aspx?ReturnUrl=http%3a%2f%2fcheck.test.wanfangdata.com.cn%2fbd%2fStudentCheck%2f&amp;RememberPasswordAutoLogin=" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTI3MjE1ODg5MmRkyGKtitYonwNJ28puZ7t7JjyJbj0=" />
+
+        <div id="top_header">
+            <link href="http://old.test.wanfangdata.com.cn/Share/Css/Share-1.0.0.css" rel="stylesheet" type="text/css" />
+<div id="resource"><a href="http://test.wanfangdata.com.cn/" class="index_font"><t><b>首页</b></t></a><a href="http://social.test.wanfangdata.com.cn/" target="_blank">学术圈</a><a href="http://trend.test.wanfangdata.com.cn/" target="_blank"><t>知识脉络</t></a><a href="http://contribute.test.wanfangdata.com.cn/" target="_blank"><t>投稿</t></a><a href="http://c.test.wanfangdata.com.cn/Rankings/PeriodicalRankings.aspx" target="_blank"><t>论文排行</t></a>
+        <a href="http://check.test.wanfangdata.com.cn/Default.aspx" target="_blank"><t>相似性检测</t></a><a href="javascript:;" id="headermorelink"><t>更多</t><small>▼</small></a></div>
+        <ul id="morelinklist" style="display:none;">
+            <li class="current"><a href="http://subject.wanfangdata.com.cn/xstjbg/2010/Index.html" target="_blank"><t>学术统计分析</t></a><br />
+                <a href="http://pa.wanfangdata.com.cn/" target="_blank"><t>专利分析(试用)</t></a><br />                
+                <a href="http://dl.wanfangdata.com.cn" target="_blank"><t>电力行业</t></a><br />
+                <a href="http://yj.wanfangdata.com.cn" target="_blank"><t>冶金行业</t></a><br />
+		<a href="http://c.g.wanfangdata.com.cn/customsite/default.aspx?id=cb" target="_blank"><t>船舶行业</t></a><br />
+                <a href="http://test.wanfangdata.com.cn/Help/CitationNotice" target="_blank"><t>引用通知</t></a><br />
+		<a href="http://test.wanfangdata.com.cn/OnlineMall/Mid" target="_blank">移动阅读</t></a></li>		
+            <li><a href="http://librarian.test.wanfangdata.com.cn/Default.aspx" target="_blank"><t>查新/跨库检索</t></a><br />
+                <a href="http://librarian.test.wanfangdata.com.cn/ScientificLiterature/Default.aspx" target="_blank"><t>科技文献分析</t></a><br />
+                
+                <a href="http://editors.test.wanfangdata.com.cn/" target="_blank"><t>编审平台</t></a><br />
+                <a href="http://www.chinadoi.cn/portal/index.htm" target="_blank"><t>DOI注册</t></a><br />
+		<a href="http://stats.test.wanfangdata.com.cn/" target="_blank"><t>期刊统计分析与评价</t></a><br />
+                <a href="http://oa.wanfangdata.com.cn" target="_blank"><t>OA论文托管</t></a><br />
+                <a href="http://publish.test.wanfangdata.com.cn/" target="_blank"><t>优先出版</t></a><br />
+                <a href="http://publish.test.wanfangdata.com.cn/Regular" target="_blank"><t>同步出版</t></a>
+                </li>
+        </ul>
+<script>
+        $(function() {
+            $("#headermorelink").click(function(e) {
+                if ($("#morelinklist").is(":hidden")) {
+                    $("#morelinklist").show();
+                    return;
+                }
+                $("#morelinklist").hide();
+            })
+            $(document).click(function(event) {
+                if (event.target && (event.target.id == "headermorelink" || $(event.target).parent().attr("id") == "headermorelink"))
+                    return;
+                $("#morelinklist").hide();
+            })
+        })
+    </script>
+            <div id="userservice"><link href="http://old.test.wanfangdata.com.cn/Share/Css/Share-1.0.0.css" rel="stylesheet" type="text/css" />
+<div id="accountIdContainer">
+</div>
+<script type="text/javascript">
+    function GetAuthContext() {
+        var context = null;
+        var cookieArray = document.cookie.split("; ");
+        $(cookieArray).each(function () {
+            var arr = this.split("=");
+            if (arr[0] == "WFKS.Auth.Test")
+                context = eval("(" + decodeURIComponent(arr[1]) + ")");
+        });
+        return context;
+    }
+
+    function GetDisplayName(context, accountType, key) {
+        for (var i = 0; i < context.Data.length; i++) {
+            if (context.Data[i].Key == (accountType + "." + key + ".DisplayName"))
+                return decodeURIComponent(context.Data[i].Value);
+        }
+        return key;
+    }
+
+
+    function getNotificationInfo() {
+        var href = 'http://social.test.wanfangdata.com.cn/Blog/Comment.aspx';
+        var cls = 'mailimg';
+        try {
+            $.getJSON('http://social.test.wanfangdata.com.cn/Services/NotificationService.ashx?callback=?', null,
+                function (json) {
+                    if (json == null || json.length == 0) { return; }
+                    var url = "";
+                    switch (json[0].Type) {
+                        case "Comment": url = "Comment.aspx"; break;
+                        case "Forward": url = "Forward.aspx"; break;
+                        case "Chat": url = "ChatHistory.aspx"; break;
+                        default: url = "Fans.aspx"; break;
+                    }
+                    href = 'http://social.test.wanfangdata.com.cn/Blog/' + url;
+                    cls = 'mailinfor';
+                });
+        } catch (ex) {
+        }
+        return '<a id="notification" class=' + cls + ' href=' + href + '></a>|';
+    }
+    function GetAccountIdObj(accountIdStr) {
+        var accountId = { AccountType: '', Key: '' },
+        index = accountIdStr.indexOf(".");
+        if (index === -1) {
+            accountId.AccountType = accountIdStr;
+        } else {
+            accountId.AccountType = accountIdStr.substring(0, index);
+            accountId.Key = accountIdStr.substring(index + 1);
+        }
+        return accountId;
+    }
+    function refreshloginStatus() {
+        var accountIdContainer = $('#accountIdContainer').html('');
+        var register = '<a href="http://login.test.wanfangdata.com.cn/Register/index"><t>注册</t></a>| ';
+        var charge = '<a href="http://tran.test.wanfangdata.com.cn/Charge.aspx"><t>充值</t></a>| ';
+        var guide = '<a href="http://test.wanfangdata.com.cn/NewGuide" target="_blank"><t>帮助</t></a>';
+
+        var loginurl = 'http://login.test.wanfangdata.com.cn/Login.aspx';
+        var location = document.location.href.toLocaleLowerCase();
+        if (location.indexOf('http://login.test.wanfangdata.com.cn/'.toLocaleLowerCase()) == -1 || location.indexOf('returnurl') == -1) {
+            loginurl += '?ReturnUrl=' + encodeURIComponent(document.location.href);
+        }
+        var login = '<a id="login" href="' + loginurl + '"><t>登录</t></a>| '
+
+        var authContext = GetAuthContext();
+        if (authContext == null || authContext.Context.AccountIds.length == 0) {
+            accountIdContainer.append(login).append(register).append(charge).append(guide);
+            return;
+        }
+
+        var showNotify = false,
+	    showOrder = false,
+        personId = null,
+        magazineId = null,
+        researcherId = null,
+        groups = [],
+        orderUrl='';
+        $(authContext.Context.AccountIds).each(function () {
+            var _this = GetAccountIdObj(this);
+            if (_this.AccountType == "Person") {
+                personId = _this.Key;
+            }
+            if (_this.AccountType == "Researcher" || _this.AccountType == "VerifiedUser") {
+                researcherId = _this.Key;
+                showNotify = true;
+            }
+            if (_this.AccountType == "MagazineInstitution") {
+                magazineId = _this.Key;
+                showNotify = true;
+            }
+            if (_this.AccountType == "Group") {
+                var displayName = GetDisplayName(authContext.Context, _this.AccountType, _this.Key);
+                groups.push({ Key: _this.Key, Name: displayName });
+            }
+            if (_this.AccountType == "IsticTimeLimit" || _this.AccountType == "IsticBalanceLimit") {
+                showOrder = true;
+                orderUrl='http://istic.test.wanfangdata.com.cn/Order';
+            }
+        });
+        //以下按显示顺序添加
+        if (showNotify) {
+            accountIdContainer.append(getNotificationInfo());
+        }
+        if (personId != null) {
+            var space = '';
+            if (personId == magazineId) {
+                var displayName = GetDisplayName(authContext.Context, 'MagazineInstitution', magazineId)
+                space = '(<a id="MagazinespaceLink" href="http://social.test.wanfangdata.com.cn/Blog/Blog.aspx?Id=' + encodeURIComponent(displayName) + '">机构空间</a>)';
+            } else if (personId == researcherId) {
+                space = '(<a id="personspace" href="http://social.test.wanfangdata.com.cn/Home.aspx?Id=' + encodeURIComponent(personId) + '">个人空间</a>)';
+            }
+            accountIdContainer.append('<a href="http://test.wanfangdata.com.cn/UserService" target="_self" id="personAccountKey">' + personId + '</a>' + space+'|');
+        }
+        if (groups.length == 1) {
+            accountIdContainer.append('<a href="http://test.wanfangdata.com.cn/Organization?userId=' + groups[0].Key + '" id="groupAccountKey">' + groups[0].Name + '服务站</a>');
+		if (showOrder) {
+            		accountIdContainer.append('(<a href="'+orderUrl+'" target="_blank">查询订单</a>)| ');
+        	}else{
+	    		accountIdContainer.append('| ');
+		}
+        }
+        if (groups.length > 1) {
+            var clickCount = 0;
+            var options = $('<select id="groupAccountList"></select>').click(function () {
+                if (clickCount++ > 0) {
+                    document.location = 'http://test.wanfangdata.com.cn/Organization?userId=' + options.val();
+                }
+            }).focus(function () {
+                clickCount = 0;
+            });
+            $.each(groups, function () {
+                options.append($('<option value=' + this.Key + '>' + this.Name + '</option>'));
+            });
+            accountIdContainer.append(options);
+		if (showOrder) {
+            		accountIdContainer.append('(<a href="'+orderUrl+'" target="_blank">查询订单</a>)| ');
+            	}else{
+	    		accountIdContainer.append('| ');
+	    	}
+        }
+        accountIdContainer.append(login).append('<a href="http://login.test.wanfangdata.com.cn/Logout.aspx" target="_self"><t>退出</t></a>| ');
+
+        if (personId != null) {
+            accountIdContainer.append(charge)
+        }
+        accountIdContainer.append(guide);
+    }
+    try{
+        refreshloginStatus();
+    } catch (ex) { }
+</script></div>
+        </div>
+        <div id="logo_nav">
+            <div class="logo_div"><a href='http://test.wanfangdata.com.cn/' class="wflogo" title="万方数据知识服务平台"></a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="header-bottom">
+            
+    <form id="loginForm" action="Login.aspx" method="post">
+        <div class="login-panel admin-panel">
+            <div class="left login-left">
+                <div class="title">欢迎登录</div>
+                <div class="needAccountType" style="visibility: " id="needLoginAccountTypeTip">
+                    请使用已开通“<span class="account-type"></span>”<t>服务的账号登录</t>
+                </div>
+                <div class="row clearfloat user-row">
+                    <div class="input-box">
+                        <i class="icon-user"></i>
+                        <input id="userid" type="text" name="userid" value="" autocomplete="off" placeholder="请输入用户名" data-errormsg="用户名不能为空" data-check="userUniqueness" />
+                    </div>
+                    <span id="useridError" class="login-error-msg"></span>
+                </div>
+                <div class="row clearfloat pwd-row">
+                    <div class="input-box">
+                        <i class="icon-pwd"></i>
+                        <input type="password" name="password" id="password" autocomplete="off" placeholder="请输入密码" data-errormsg="密码不能为空" />
+                    </div>
+                    <span id="passwordError" class="login-error-msg"></span>
+                </div>
+                <div class="row clearfloat rem-box">
+                    <input type="checkbox" id="rememberPassword" class="rem-pwd" name="rememberPassword" value="True" />
+                    <label for="rememberPassword" class="rem-pwd-label">自动登录</label>
+                </div>
+                <div class="row">
+                    <input class="login-btn btn-action btn" type="submit" value="登录" />
+                </div>
+                <div class="other-action clearfloat">
+                    <a href="/Register/Index" class="left">免费注册</a>
+                    <a href='Account/GetPassword' class="right">找回密码</a>
+                </div>
+                <div class="ip-text">
+                    <t>欢迎来自</t>
+                    <t>的用户</t>
+                </div>
+            </div>
+            <div class="right login-right">
+                <div class="title">您还可以使用第三方账号登录</div>
+                <div class="third-login">
+                    <a href="">
+                        <img class="btn" src="images/login-qq.png" alt="qq" /></a>
+                    <a href="">
+                        <img class="btn" src="images/login-sina.png" alt="sina" /></a>
+                    <a href="">
+                        <img class="btn" src="images/login-weixin.png" alt="weixin" /></a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        $(function () {
+            var ERROR_BOX = 'error-box';
+            var $loginBtn = $('.login-btn');
+            var $userId = $('#userid');
+            var $password = $('#password');
+            var $inputs = [$userId, $password];
+            var error = function ($input, msg) {
+                var resultMsg = msg || $input.attr('data-errorMsg');
+                $input.parents('.input-box').addClass(ERROR_BOX)
+                    .next('.login-error-msg').html(resultMsg);
+            };
+            $.each($inputs, function () {
+                var me = this;
+                me.focus(function () {
+                    me.parents('.input-box').removeClass(ERROR_BOX).next('.login-error-msg').html('');
+                }).blur(function () {
+                    if (!$.trim(me.val())) {
+                        error(me);
+                        return;
+                    }
+                });
+                me.watermark(me.attr('placeholder'));
+            });
+            $('form').submit(function (e) {
+                var bValide = true;
+                $.each($inputs, function () {
+                    if (!this.val()) {
+                        error(this);
+                        bValide = false;
+                    }
+                });
+                return bValide;
+            });
+
+            $.ajax({
+                url: 'http://check.test.wanfangdata.com.cn//api/getip',
+                data: { requestUrl: window.location.href },
+                type: "GET",
+                dataType: "jsonp",
+                success: function (data) {
+                    if (data.IpString != '') {
+                        $(".ip-text").append('<br/><t>欢迎来自</t>')
+                            .append(" " + data.IpString)
+                            .append('<t>的用户</t>')
+                            .addClass('ip-tip');
+                    }
+                }
+            });
+
+
+        })
+    </script>
+
+        </div>
+        <div class="clear"></div>
+       <link href="http://old.test.wanfangdata.com.cn/Share/Css/Share-1.0.0.css" rel="stylesheet" type="text/css" />
+<div class="WfBottom">
+	<div class="Wfbotmain">
+        	<ul class="Wfbotli"><span class="WfbotliSpan"><b>客户服务</b></span>
+            	<li><span class="color99">．</span>邮箱<a href="mailto:service@wanfangdata.com.cn">service@wanfangdata.com.cn</a></li>
+                <li><span class="color99">．</span>客服电话 4000-115-888</li>
+                <li>&nbsp;&nbsp;8:00-11:30,13:00-17:00(工作日)</li>
+            </ul>
+            <ul class="Wfbotli"><span class="WfbotliSpan"><b>关注我们</b></span>
+            	<li><span class="color99">．</span><a href="http://weibo.com/wanfangdata" target="_blank">新浪微博</a></li>
+                <li><span class="color99">．</span><a href="http://wiki.wanfangdata.com.cn" target="_blank">平台百科</a></li>
+                <li><span class="color99">．</span><a target="_blank" href="http://wiki.wanfangdata.com.cn/index.php?title=业务合作">业务合作</a></li>
+                <li><span class="color99">．</span><a target="_blank" href="http://yantao.wanfangdata.com.cn">数图新服务应用研讨班</li></a>
+            </ul>
+            <ul class="Wfbotli"><span class="WfbotliSpan"><b>广告服务</b></span>
+            	<li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/CustomerService/AD#form">广告形式</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/CustomerService/AD#price">价格体系</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/CustomerService/AD#apply">广告申请</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/CustomerService/AD#guarantee">服务保障</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/CustomerService/AD#contact">联系方式</a></li>
+            </ul>
+            <ul class="Wfbotli"><span class="WfbotliSpan"><b>网上商城</b></span>
+            	<li><span class="color99">．</span><a href="http://tran.test.wanfangdata.com.cn/PurchaseCard/Default.aspx" target="_blank">充值卡</a></li>
+            </ul>
+            <ul class="Wfbotli"><span class="WfbotliSpan"><b>使用帮助</b></span>
+            	<li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/NewGuide?helpitem=registerhelp">注册和登录</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/NewGuide?helpitem=searchepaper">检索文献</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/NewGuide?helpitem=pay">如何支付</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/NewGuide?helpitem=recharging">如何充值</a></li>
+                <li><span class="color99">．</span><a href="http://test.wanfangdata.com.cn/NewGuide?helpitem=downloadpaper">下载和查看</a></li>
+            </ul>
+            <ul><span class="WfbotliSpan"><b>语种</b></span>
+            	<li><span class="color99">．</span><a href="#" id="zh-CN" name="multiLanguageSwitch">简体中文</a></li>
+                <li><span class="color99">．</span><a href="#" id="zh-TW" name="multiLanguageSwitch">繁體中文</a></li>
+                <li><span class="color99">．</span><a href="http://www.wanfangdata.com">English</a></li>
+            </ul>
+	    <script>    
+    		$(function() {
+        		$("a[name='multiLanguageSwitch']").click(function() {
+            			var cookieValue = "PreferredCulture=" + escape(this.id);  
+            			cookieValue += ";expires=" + new Date(9999,11,31).toGMTString();     
+            			cookieValue += ";path=/;domain=.wanfangdata.com.cn";
+            			cookieValue += ";true";
+            			document.cookie = cookieValue;
+            
+            			window.location.href = document.location.protocol + "//" + document.location.host + document.location.pathname + document.location.search;
+        		});
+    		})
+	</script>
+            <p class="clearLeft"></p>
+<div id="foot_text">
+    <p>
+  <a href='http://test.wanfangdata.com.cn/CustomerService/Announce'><t>知识产权声明</t></a>|
+  <a href='http://test.wanfangdata.com.cn/CustomerService/Services'><t>服务承诺</t></a>| 
+  <a href='http://test.wanfangdata.com.cn/AboutUs/ContactUs'><t>联系我们</t></a>|
+  <a href="http://wanfangdata.zhiye.com" target="_blank"><t>人才招聘</t></a>|
+  <a href='http://test.wanfangdata.com.cn/CustomerService/Services'><t>客户服务</t></a>|
+  <a href='http://test.wanfangdata.com.cn/AboutUs/index'><t>关于我们</t></a>  
+</p>
+<p>  
+  <t>京ICP证</t>：010071&nbsp;&nbsp;<t>互联网出版许可证：新出网证(京)字042号</t>&nbsp;&nbsp;<t>北京市公安局海淀分局备案编号</t>：110108901585
+  <br /><t>万方数据知识服务平台--国家科技支撑计划资助项目（编号：2006BAH03B01）©北京万方数据股份有限公司&nbsp;&nbsp;万方数据电子出版社</t>
+  <span></span>
+</p>
+</div>
+        </div>
+
+</div>
+<script type="text/javascript">
+	window.onload = function() {
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.async = true; 
+		script.src = _bdhmProtocol + "hm.baidu.com/h.js%3Ff5e6bd27352a71a202024e821056162b";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(script,s);					
+}
+</script>
+    </form>
+</body>
+</html>

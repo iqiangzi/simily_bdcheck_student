@@ -9,7 +9,7 @@ import os
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-
+from selenium.common.exceptions import TimeoutException
 from testCase.models import myUnitFirefox
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,13 +17,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from util.toolUtils.getPath import GetPath
 
 
+# def setUpModule():
+#     pass
 class BasePage(object):
     '''
     页面基础类，用于所有页面的继承
     '''
     #burl ="http://login.test.wanfangdata.com.cn/Login.aspx" # 万方主站所用用户登录入口
-    burl ="http://check.test.wanfangdata.com.cn/md" #万方相似性硕博登录入口
-
+    burl ="http://check.test.wanfangdata.com.cn/bd/StudentCheck" #万方本科生登录入口
 
     def __init__(self,selenium_driver,base_url= burl,parent=None):
         self.base_url = base_url
@@ -78,7 +79,7 @@ class BasePage(object):
             flag = False
         return flag
 
-    def wait_element_visible(self, time, element):
+    def wait_element_visible(self, timeout, element):
         '''
         等待元素出现，超过时间页面加载失败
         :param time:
@@ -86,18 +87,27 @@ class BasePage(object):
         :return:
         '''
         try:
-            WebDriverWait(self.driver, time).until(EC.presence_of_element_located(element))
+            WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(element))
             return self.driver.find_element(*element)
         except Exception as e:
             print('元素异常, 页面已截图 :')
             self.driver.screenshot()
 
+    # 一直等待某个元素消失，默认超时10秒
+    def is_not_visible(self, timeout, element):
+        try:
+            WebDriverWait(self.driver, timeout).until_not(EC.visibility_of_element_located(element))
+            return True
+        except TimeoutException as e:
+            return False
     #判断是否下载到本地,返回bool类型的True或False
     def verifyExist(self,fileName,filePath):
         ab_path = GetPath().getAbsoluteFilePath(fileName,filePath)
         flag = os.path.exists(ab_path)
         return flag
 
+# def tearDownModule():
+#     pass
 if __name__=='__main__':
     s = BasePage(selenium_driver=webdriver.Firefox())
     s.open("/")

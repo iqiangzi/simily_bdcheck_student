@@ -6,10 +6,8 @@
 # @File    : myUnitChrome.py
 # @Software: PyCharm
 from selenium import webdriver
-
 from browserDriver.setBrowser import setBrowser
 import unittest
-
 from util.toolUtils.getPath import GetPath
 
 
@@ -23,10 +21,9 @@ class UnitChrome(unittest.TestCase):
         self.accept_next_alert = True
 
     def tearDown(self):
+        # pass
         self.driver.quit()
 
-
-#
 if __name__=='__main__':
     t = UnitChrome()
     d = t.setUp()

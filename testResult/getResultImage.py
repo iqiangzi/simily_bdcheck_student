@@ -14,8 +14,8 @@ class getResultImage():
         base_dir = str(base_dir)
         base_dir= base_dir.replace('\\','/')
         file_path = base_dir + "/testResult/testImages/"+file_name
-        # driver.save_screenshot(file_path)
-        driver.get_screenshot_as_file(file_path)
+        driver.save_screenshot(file_path)
+        # driver.get_screenshot_as_file(file_path)
 
 if __name__=='__main__':
     s = getResultImage()
